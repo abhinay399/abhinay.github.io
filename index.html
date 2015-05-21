@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>Add Feature</title>
+        <script src="jquery.min.js"></script> //called the jquery
+ 
+        <script type="text/javascript">
+
+$(function() {
+                var addDiv = $('#addinput');
+                var i = $('#addinput p').size() + 1;
+                $('#addNew').live('click', function() {
+                                                        $('<p><input type="text" id="p_new" size="40" name="p_new_' + i +'" value="" placeholder="I am New" /><a href="#" id="remNew">Remove</a> </p>').appendTo(addDiv);
+                i++;
+
+return false;
+                                                        });
+
+
+        $('#remNew').live('click', function() {
+                                                if( i > 2 ) {
+                                                $(this).parents('p').remove();
+                                                i--;
+                                                                }
+return false;
+                                                });
+});
+
+        </script>
+
+</head>
+                <body>
+                        <h2>Adding new input box</h2>
+
+                        <form name="text" method="post" action="result.php">
+                        <div id="addinput">
+                        <p>
+                                <input type="text" id="p_new" size="20" name="p_new" value="" placeholder="Input Value" /><a href="#" id="addNew">Add</a>
+                                </p>
+                        <input type="submit" name="submit"/>
+</div>
+</form>
+</body>
+</html>
